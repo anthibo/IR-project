@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Model Results</title>
+</head>
+
+<body>
+    <p>Query: <%= JSON.stringify(query) %> </p>
+    <p>Documents: </p>
+    <% for( let index = 0; index < documents.length; index++ ) { %>
+    <p><%=JSON.stringify(documents[index])  %> </p>
+    <% } %>
+
+
+    <ol>
+
+
+        <%for (let i = 0; i < docs.length; i++) { %>
+        <li><%=docs[i].name%> </li>
+
+
+        <%  }%>
+    </ol>
+
+</body>
+
+</html>

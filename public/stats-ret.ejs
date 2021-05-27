@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>stats model ret </title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <th>Letters</th>
+            <th>Query Weight</th>
+            <% for( let i = 0; i < data.document.length; i++ ) { %>
+            <th><%= data.document[i].docName %></th>
+            <% } %>
+        </tr>
+        <% for( let i = 0; i <6; i++ ) { 
+            let letter = data.letters[i]   
+            %>
+        <tr>
+            <td><%= letter %> </td>
+            <td><%= data.letterWeights[letter] %> </td>
+            <% for( let docIndex = 0; docIndex < data.document.length; docIndex++ ) { 
+                let freq = data.document[docIndex].lettersFrequency[i].frequency
+                
+            %>
+            <td><%= freq%></td>
+            <% } %>
+        </tr>
+        <% } %>
+        <tr>
+            <th colspan="2">Similarity Score</th>
+            <% for( let i = 0; i < data.document.length; i++ ) { %>
+            <td><%= data.document[i].similarity %></td>
+            <% } %>
+        </tr>
+
+    </table>
+
+
+    <%=//JSON.stringify(data)%>
+    <ol>
+
+
+        <%for (let i = 0; i < docs.length; i++) { %>
+        <li><%=docs[i].docName%> </li>
+
+
+        <%  }%>
+    </ol>
+
+
+</body>
+
+</html>
